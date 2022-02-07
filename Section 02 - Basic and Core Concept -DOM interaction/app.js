@@ -1,18 +1,21 @@
 const app = Vue.createApp({
-    data() {
-        return {
-            courseGoal: 'Get good at Touhou',
-            vueLink: 'https://vuejs.org/'
-        };
+  data() {
+    return {
+      courseGoalA: 'Get good at Touhou',
+      courseGoalB: 'Get good at Sonic',
+      vueLink: 'https://vuejs.org/',
+    };
+  },
+  methods: {
+    outputGoal() {
+      const randomNumber = Math.random();
+      if (randomNumber < 0.5) {
+        return this.courseGoalA;
+      } else {
+        return this.courseGoalB;
+      }
     },
-    methods: {
-        outputGoal() {
-            const randomNumber = Math.random();
-            if (randomNumber < 0.5) {
-                return;
-            }
-        }
-    }
+  },
 });
 
 app.mount('#user-goal');
